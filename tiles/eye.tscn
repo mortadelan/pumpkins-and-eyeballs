@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bsfugbvdgct17"]
+
+[ext_resource type="Texture2D" uid="uid://c47u5f1s7j76g" path="res://art/eye_angering1.png" id="3_voyg8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_voyg8"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17dhs"]
+radius = 9.0
+height = 24.0
+
+[node name="CharacterBody2D" type="RigidBody2D" unique_id=1407710215]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_voyg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=750448600]
+scale = Vector2(2, 2)
+texture = ExtResource("3_voyg8")
+
+[node name="BigCollision" type="CollisionShape2D" parent="." unique_id=2030701664]
+position = Vector2(0, -1)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_17dhs")

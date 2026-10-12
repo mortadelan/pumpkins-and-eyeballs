@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cjr7mjlhh8x2y"]
+
+[ext_resource type="Texture2D" uid="uid://bmui1q0b8aoow" path="res://art/flipper1.png" id="1_pp0x8"]
+[ext_resource type="Script" uid="uid://f6u3wia0yrp6" path="res://scripts/flipper.gd" id="1_qljfp"]
+[ext_resource type="Texture2D" uid="uid://hjwv6xsi2pqp" path="res://art/flipper2.png" id="2_qljfp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3prw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pp0x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qljfp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2102407202]
+scale = Vector2(2, 2)
+motion_mode = 1
+script = ExtResource("1_qljfp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1001422421]
+polygon = PackedVector2Array(-12, 11, -10, 11, 15, -6, 15, -10, 10, -10, -13, -2, -15, 2, -15, 10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=983609655]
+sprite_frames = SubResource("SpriteFrames_3prw8")

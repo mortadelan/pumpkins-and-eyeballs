@@ -1,0 +1,184 @@
+[gd_scene format=4 uid="uid://wtcgj40evbud"]
+
+[ext_resource type="Texture2D" uid="uid://bhkd4ksqpjkif" path="res://art/background.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dqe2p3bfedr3d" path="res://art/nothin.png" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cjr7mjlhh8x2y" path="res://tiles/flipper.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dy4lh174arv8k" path="res://tiles/platform.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://do7d7xb0ekt7q" path="res://tiles/pump1.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bixjsd5qckase" path="res://tiles/nothin.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bsfugbvdgct17" path="res://tiles/eye.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dllwyynudf67l" path="res://tiles/launcher.tscn" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://bpt31a0b65k0w" path="res://tiles/wall.tscn" id="9_kek77"]
+[ext_resource type="Script" uid="uid://b8bjc2ay2wxrt" path="res://scripts/label.gd" id="10_4c57u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
+texture = ExtResource("2_0xm2m")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1bvp3"]
+scenes/1/scene = ExtResource("3_h2yge")
+scenes/2/scene = ExtResource("4_1bvp3")
+scenes/3/scene = ExtResource("5_lquwl")
+scenes/4/scene = ExtResource("6_7mycd")
+scenes/5/scene = ExtResource("7_5vw27")
+scenes/6/scene = ExtResource("8_kek77")
+scenes/7/scene = ExtResource("9_kek77")
+
+[sub_resource type="TileSet" id="TileSet_3prw8"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_h2yge")
+sources/4 = SubResource("TileSetScenesCollectionSource_1bvp3")
+
+[sub_resource type="SystemFont" id="SystemFont_kek77"]
+font_names = PackedStringArray("scientifica")
+disable_embedded_bitmaps = false
+hinting = 0
+subpixel_positioning = 0
+keep_rounding_remainders = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_kek77"]
+font = SubResource("SystemFont_kek77")
+font_size = 28
+
+[node name="Control" type="Control" unique_id=1749722962]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=741844159]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ig7tw")
+stretch_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=232939761]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_right = 180.0
+offset_bottom = 648.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=651036267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4745098, 0.26666668, 0.2901961, 1)
+
+[node name="Node2D" type="Node2D" parent="Control" unique_id=2008025555]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Control/Node2D" unique_id=52052056]
+position = Vector2(0, 64)
+tile_map_data = PackedByteArray("AAACAAcABAAAAAAAAwACAAQABAAAAAAAAwACAAgABAAAAAAAAgD//wkABAAAAAAABAD//wgABAAAAAAABwD//wcABAAAAAAABwD//wYABAAAAAAABwD//wUABAAAAAAABwD//wQABAAAAAAABwD//wMABAAAAAAABwD//wIABAAAAAAABwD//wEABAAAAAAABwD//wAABAAAAAAABwAAAAgABAAAAAAAAQAEAAgABAAAAAAAARAGAAQABAAAAAAABgAAAAkABAAAAAAAB2AEAAkABAAAAAAAB2AFAAkABAAAAAAABAAFAAgABAAAAAAABzAFAAcABAAAAAAABzAFAAYABAAAAAAABzAFAAUABAAAAAAABzAFAAQABAAAAAAABzAFAAMABAAAAAAABzAFAAIABAAAAAAABzAFAAEABAAAAAAABzAAAAoABAAAAAAABAAEAAoABAAAAAAABAAFAAoABAAAAAAABAD//woABAAAAAAABAAAAP//BAAAAAAAB0ABAP//BAAAAAAAB0ACAP//BAAAAAAAB0ADAP//BAAAAAAAB0AEAP//BAAAAAAAB0AFAP//BAAAAAAAB0D/////BAAAAAAABAAGAP//BAAAAAAABAAGAAAABAAAAAAABAABAAIABAAAAAAAAwADAAIABAAAAAAAAwAAAAQABAAAAAAAAgAEAAQABAAAAAAAAgA=")
+tile_set = SubResource("TileSet_3prw8")
+
+[node name="EyeSpawn" type="Node2D" parent="Control/Node2D/TileMapLayer" unique_id=2008299285]
+position = Vector2(340, 43)
+
+[node name="Label" type="Label" parent="." unique_id=1722764287]
+editor_description = "Copyright (c) 2020 Akshay Oppiliappan (nerdy@peppe.rs)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
+----------------------------------------------------------- SIL OPEN FONT
+LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation efforts
+of academic and linguistic communities, and to provide a free and open framework
+in which fonts may be shared and improved in partnership with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The fonts,
+including any derivative works, can be bundled, embedded, redistributed and/or
+sold with any software provided that any reserved names are not used by
+derivative works. The fonts and derivatives, however, cannot be released under
+any other type of license. The requirement for fonts to remain under this
+license does not apply to any document created using the fonts or their
+derivatives.
+
+DEFINITIONS \"Font Software\" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may include source
+files, build scripts and documentation.
+
+\"Reserved Font Name\" refers to any names specified as such after the copyright
+statement(s).
+
+\"Original Version\" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+\"Modified Version\" refers to any derivative made by adding to, deleting, or
+substituting -- in part or in whole -- any of the components of the Original
+Version, by changing formats or by porting the Font Software to a new
+environment.
+
+\"Author\" refers to any designer, engineer, programmer, technical writer or other
+person who contributed to the Font Software.
+
+PERMISSION AND CONDITIONS Permission is hereby granted, free of charge, to any
+person obtaining a copy of the Font Software, to use, study, copy, merge, embed,
+modify, redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components, in Original
+or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy contains
+the above copyright notice and this license. These can be included either as
+stand-alone text files, human-readable headers or in the appropriate
+machine-readable metadata fields within text or binary files as long as those
+fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font Name(s)
+unless explicit written permission is granted by the corresponding Copyright
+Holder. This restriction only applies to the primary font name as presented to
+the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font Software
+shall not be used to promote, endorse or advertise any Modified Version, except
+to acknowledge the contribution(s) of the Copyright Holder(s) and the Author(s)
+or with their explicit written permission.
+
+5) The Font Software, modified or unmodified, in part or in whole, must be
+distributed entirely under this license, and must not be distributed under any
+other license. The requirement for fonts to remain under this license does not
+apply to any document created using the Font Software.
+
+TERMINATION This license becomes null and void if any of the above conditions
+are not met.
+
+DISCLAIMER THE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF
+COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY
+GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY
+TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+"
+layout_mode = 0
+offset_left = 181.0
+offset_top = 124.0
+offset_right = 302.0
+offset_bottom = 153.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_kek77")
+script = ExtResource("10_4c57u")

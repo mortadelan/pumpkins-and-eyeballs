@@ -1,0 +1,29 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+pumpkins and eyeballs.144x144.png
+pumpkins and eyeballs.144x144.png.import
+pumpkins and eyeballs.180x180.png
+pumpkins and eyeballs.180x180.png.import
+pumpkins and eyeballs.512x512.png
+pumpkins and eyeballs.512x512.png.import
+pumpkins and eyeballs.apple-touch-icon.png
+pumpkins and eyeballs.apple-touch-icon.png.import
+pumpkins and eyeballs.audio.position.worklet.js
+pumpkins and eyeballs.audio.worklet.js
+pumpkins and eyeballs.console.exe
+pumpkins and eyeballs.exe
+pumpkins and eyeballs.icon.png
+pumpkins and eyeballs.icon.png.import
+pumpkins and eyeballs.js
+pumpkins and eyeballs.manifest.json
+pumpkins and eyeballs.offline.html
+pumpkins and eyeballs.pck
+pumpkins and eyeballs.png.import
+pumpkins and eyeballs.service.worker.js
+pumpkins and eyeballs.wasm
+pumpkins and eyeballs.x86_64
+p_and_e
+demo.mp4
+demo.ogv
+demo.ogv.uid
